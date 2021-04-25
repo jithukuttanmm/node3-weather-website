@@ -8,7 +8,8 @@ const forecast = (latitude, langitude, callback) => {
       const { current } = body;
       callback(undefined, {
         imageUrl: current.weather_icons,
-        stringValue: `${current.weather_descriptions[0]}, It is currently ${current.temperature} degrees out, but it feels like ${current.feelslike} degrees.`,
+        stringValue: `${current.weather_descriptions[0]}, It is currently ${current.temperature} degrees out, but it feels like ${current.feelslike} degrees.
+        Last updated at ${current.observation_time}`,
       });
     }
   });
